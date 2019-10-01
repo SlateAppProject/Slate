@@ -1,5 +1,5 @@
-# Slate
-
+# SLATE
+## Team Meh
 ### Members
  * Brandon Hurrington
  * Manish B KC
