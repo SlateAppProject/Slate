@@ -1,5 +1,11 @@
 # Team Agreement
 
+## Team Members
+* Brandon Hurrington
+* Manish B KC
+* Marisha Hoza
+* Peter Lee
+
 ### Communication Plan
 * How will you communicate after hours and on the weekend?
   * 9:30am-5:30pm flexible depending on if issues occur. 
