@@ -1,6 +1,6 @@
 # SLATE
 ## Team Meh
-### Members
+### Team Members
  * Brandon Hurrington
  * Manish B KC
  * Marisha Hoza
