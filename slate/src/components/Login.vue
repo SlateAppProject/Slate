@@ -21,7 +21,7 @@ export default {
       password: ""
   },
   props: {
-    msg: String
+    
   }
 }
 </script>
