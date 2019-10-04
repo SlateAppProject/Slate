@@ -1,5 +1,7 @@
 # SLATE
 ## Team Meh
+### Product Description
+A translation chat app geared towards groups of foreign language enthusiasts. 
 
 ### Team Members
  * Brandon Hurrington
@@ -15,7 +17,7 @@
 ### Domain Model
 ![Model](https://github.com/SlateAppProject/Slate/blob/master/docs/model.jpg)
 
-### List of AWS Products:
+### AWS Product Assets:
  -  API Gateway
  - Cognito
  -  Lambda
