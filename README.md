@@ -13,4 +13,4 @@
 * [Whimsical Wireframe](https://whimsical.com/4Jpa6FyPKYeXfBFEGr25dt)
 
 ### Domain Model
-![Model]()
+![Model](https://github.com/SlateAppProject/Slate/blob/master/docs/model.jpg)
