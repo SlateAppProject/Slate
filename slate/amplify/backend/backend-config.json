@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"slate3283cbd4": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
