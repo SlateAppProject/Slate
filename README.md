@@ -14,3 +14,13 @@
 
 ### Domain Model
 ![Model](https://github.com/SlateAppProject/Slate/blob/master/docs/model.jpg)
+
+### List of AWS Products:
+ -  API Gateway
+ - Cognito
+ -  Lambda
+ - Translate
+ - Redis
+ - CodeStar
+ - Dynamo DB
+
