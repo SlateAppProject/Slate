@@ -8,7 +8,7 @@
 
 ### Communication Plan
 * How will you communicate after hours and on the weekend?
-  * 9:30am-5:30pm flexible depending on if issues occur. 
+  * 9:30am-5:00pm flexible depending on if issues occur. 
   * Slack to communicate after hours, but understand that team members may be busy and not able to respond.
   * Daily standup at 9:45am
   * Daily standup with TAs and Instructor 10:00am
