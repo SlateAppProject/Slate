@@ -12,4 +12,5 @@
 * [Glo Board](https://app.gitkraken.com/glo/board/XZOBl6r2-gAPzcbw)
 * [Whimsical Wireframe](https://whimsical.com/4Jpa6FyPKYeXfBFEGr25dt)
 
-
+### Domain Model
+![Model]()
