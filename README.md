@@ -20,11 +20,11 @@ A translation chat app geared towards groups of foreign language enthusiasts.
 ![Model](https://github.com/SlateAppProject/Slate/blob/master/docs/model.jpg)
 
 ## AWS Product Assets:
- -  API Gateway
+ - API Gateway
  - Cognito
- -  Lambda
+ - Lambda
  - Translate
  - Redis
- - CodeStar
+ - <strike>CodeStar</strike>
  - Dynamo DB
 
