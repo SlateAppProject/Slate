@@ -1,14 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Amplify, * as AmplifyModules from 'aws-amplify'
+import { AmplifyPlugin } from 'aws-amplify-vue'
+
 import App from './App.vue'
+import router from './routes'
+import config from './aws-exports'
 
-import routes from './routes'
-
+Amplify.configure(config)
+Vue.use(VueRouter)
+Vue.use(AmplifyPlugin, AmplifyModules)
 Vue.config.productionTip = false
 
-Vue.use(VueRouter)
-
-const router = new VueRouter( { routes })
 
 new Vue({
   router,

@@ -1,0 +1,19 @@
+{
+    "slateapp": {
+        "awscloudformation": {
+            "AuthRoleName": "slate-slateapp-20191004142051-authRole",
+            "UnauthRoleArn": "arn:aws:iam::798470182683:role/slate-slateapp-20191004142051-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::798470182683:role/slate-slateapp-20191004142051-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "slate-slateapp-20191004142051-deployment",
+            "UnauthRoleName": "slate-slateapp-20191004142051-unauthRole",
+            "StackName": "slate-slateapp-20191004142051",
+            "StackId": "arn:aws:cloudformation:eu-west-2:798470182683:stack/slate-slateapp-20191004142051/d8b917b0-e6ec-11e9-aca4-06b0998bdefc"
+        },
+        "categories": {
+            "auth": {
+                "slate3283cbd4": {}
+            }
+        }
+    }
+}
