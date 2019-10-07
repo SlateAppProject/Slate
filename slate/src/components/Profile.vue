@@ -1,5 +1,6 @@
 <template>
   <h1>Welcome, {{user.username}}</h1>
+  
 </template>
 
 <script>

@@ -15,6 +15,9 @@
       <router-link tag="p" to="/protected">
         <a>Protected</a>
       </router-link>
+      <router-link tag="p" to="/ChatRoom" v-if="signedIn">
+        <a>Chat Room</a>
+      </router-link>
       <router-link tag="p" to="/auth" v-if="!signedIn">
         <a>Sign Up / Sign In</a>
       </router-link>
@@ -29,14 +32,17 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Hub from './components/Hub.vue'
+import ChatRoom from './components/ChatRoom'
 import { AmplifyEventBus } from 'aws-amplify-vue'
 import { Auth } from 'aws-amplify'
+
 
 export default {
   name: 'app',
   components: {
     Navbar,
-    Hub
+    Hub,
+    ChatRoom
   },
   data() {
     return {
