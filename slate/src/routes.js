@@ -1,18 +1,21 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+import Auth from './components/Auth'
+
 import Login from './components/Login.vue'
 import AboutUs from './components/AboutUs.vue'
-import Auth from './components/Auth'
 import Protected from './components/Protected'
 import Home from './components/Home'
 import Profile from './components/Profile'
-import VueRouter from 'vue-router'
-import Vue from 'vue'
-
+import Hub from './components/Hub'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/auth', component: Auth },
   { path: '/protected', component: Protected, meta: { requiresAuth: true} },
   { path: '/profile', component: Profile, meta: { requiresAuth: true} },
+  { path: '/Hub', component: Hub, meta: { requiresAuth: true} },
   { path: '/Login', component: Login },
   { path: '/AboutUs', component: AboutUs }
 ]

@@ -9,8 +9,8 @@
       <router-link tag="p" to="/">
         <a>Home</a>
       </router-link>
-      <router-link tag="p" to="/profile">
-        <a>Profile</a>
+      <router-link tag="p" to="/Hub">
+        <a>Hub</a>
       </router-link>
       <router-link tag="p" to="/protected">
         <a>Protected</a>
@@ -28,13 +28,15 @@
 
 <script>
 import Navbar from './components/Navbar.vue'
+import Hub from './components/Hub.vue'
 import { AmplifyEventBus } from 'aws-amplify-vue'
 import { Auth } from 'aws-amplify'
 
 export default {
   name: 'app',
   components: {
-    Navbar
+    Navbar,
+    Hub
   },
   data() {
     return {
