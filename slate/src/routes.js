@@ -9,6 +9,7 @@ import Protected from './components/Protected'
 import Home from './components/Home'
 import Profile from './components/Profile'
 import Hub from './components/Hub'
+import ChatRoom from './components/ChatRoom'
 
 const routes = [
   { path: '/', component: Home },
@@ -17,7 +18,8 @@ const routes = [
   { path: '/profile', component: Profile, meta: { requiresAuth: true} },
   { path: '/Hub', component: Hub, meta: { requiresAuth: true} },
   { path: '/Login', component: Login },
-  { path: '/AboutUs', component: AboutUs }
+  { path: '/AboutUs', component: AboutUs },
+  { path: '/ChatRoom', component: ChatRoom }
 ]
 
 const router = new VueRouter({ routes })
