@@ -1,9 +1,12 @@
 <template>
   <div>
-    <h1>ROOM TITLE</h1>
+    <h1>GLOBAL CHAT</h1>
     <div id="message-history">
-      <div v-for="(message, index) in chatRoomLog" v-bind:class="message.sender ? 'self' : 'other'" :key="index">
-        <p>{{ message }}</p>
+      <div v-for="(message, index) in chatRoomLog" v-bind:class="message.userName === $store.getters.user.username ? 'self' : 'other'" :key="index">
+        <h3>{{message.userName}}</h3>
+        <p>{{message.timestamp}}</p>
+        <p>{{message.message}}</p>
+        <p>{{message.translatedMessage}}</p>
       </div>
     </div>
     <MessageInput />
@@ -11,7 +14,6 @@
 </template>
 
 <script>
-
 import MessageInput from './MessageInput.vue'
 
 export default {
@@ -33,13 +35,33 @@ export default {
       this.$connect()
     },
     listenForMessages() {
-      this.$options.sockets.onmessage = (messageEvent) => {
-        // fancy stuff like translation
-      this.chatRoomLog.push(JSON.parse(messageEvent.data))
+      this.$options.sockets.onmessage = async (messageEvent) => {
+        let messageFromSocket = JSON.parse(messageEvent.data)
+
+        let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languagePreference, 'en')
+        messageFromSocket.translatedMessage = translation.message
+
+        this.chatRoomLog.push(messageFromSocket)
       }
     },
     disconnectFromSocket() {
       this.$disconnect()
+    },
+    async translateMessage(inputMessage, inputLanguage, outputLanguage) {
+      const api = 'https://rgtk0416cl.execute-api.us-west-2.amazonaws.com/dev/text'
+      let messageBody = {
+        message: inputMessage,
+        source: inputLanguage,
+        destination: outputLanguage
+      }
+      const response = await fetch(api, {
+        method: 'PUT',
+        mode: 'cors',
+        body: JSON.stringify(messageBody),
+        cache: 'default'
+      })
+      let message = response.json()
+      return message
     }
   },
   beforeMount() {
