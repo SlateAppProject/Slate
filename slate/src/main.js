@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueNativeSock from 'vue-native-websocket'
+import moment from 'moment'
 
 // AWS imports
 import Amplify, * as AmplifyModules from 'aws-amplify'

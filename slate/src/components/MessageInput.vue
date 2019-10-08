@@ -1,8 +1,8 @@
 <template>
   <div>
     <form > 
-        <p>{{this.$store.getters.user.userName}}</p>
-        <p>{{this.$store.getters.user.UUID}}</p>
+        <!-- <p>{{this.$store.getters.userName}}</p> -->
+        <!-- <p>{{this.$store.getters.user.pool.clientId}}</p> -->
         <textarea v-model="messageObject.message" type=text placeholder="Message..."></textarea>    
         <button @click.prevent="sendMessage">SEND</button>
     </form>
@@ -16,22 +16,21 @@ export default {
   data() {
       return {
       messageObject: {
-        userName: this.$store.getters.userName,
-        UUID: this.$store.getters.user.UUID,
+        action: 'sendmessage',
+        userName: '',
+        UUID: '',
         message: '',
         timestamp: '',
-        action: 'sendmessage',
         languagePreference: this.$store.getters.languagePreference
       }
     }
   },
   methods: {
     sendMessage() {
-        console.log(this.messageObject)
+        this.messageObject.userName = this.$store.getters.userName
+        this.messageObject.UUID = this.$store.getters.user.pool.clientId
         this.messageObject.timestamp = Math.floor(Date.now() / 1000)
-        const messageJSONString = JSON.stringify(this.messageObject);
-        this.$socket.sendObj( messageJSONString )
-        console.log(messageJSONString)
+        this.$socket.sendObj( this.messageObject )
     }
   },
   

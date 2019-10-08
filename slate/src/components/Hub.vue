@@ -2,9 +2,8 @@
   <div id="hub-view">
     <div id="profile-details">
         <img id="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
-        <h1>{{ user.username.toUpperCase() }}</h1>
+        <h1>{{ this.$store.getters.user.username.toUpperCase() }}</h1>
     </div>
-    <p>{{ user }} </p>
     <FavoriteRooms :rooms="favoriteRooms" id="favorite-rooms-list"/>
     <RoomsList :rooms="chatRooms" id="chat-rooms-list"/>
   </div>
@@ -26,7 +25,7 @@ export default {
     name: 'Hub',
     data() {
         return {
-            user: this.$store.getters.user,
+            // user: this.$store.getters.user,
             favoriteRooms: [
                 'German',
                 'Spanish',
@@ -43,13 +42,6 @@ export default {
                 'Farsi'
             ],
         }   
-    },
-    beforeCreate() {
-    Auth.currentAuthenticatedUser()
-      .then(user => {
-        this.$store.commit('createUser', user)
-      })
-      .catch(() => console.log('not signed in...'))
     }
 }
 </script>

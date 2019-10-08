@@ -64,6 +64,7 @@ export default {
     Auth.currentAuthenticatedUser()
       .then(user => {
         this.signedIn = true
+        this.$store.commit('createUser', user)
       })
       .catch(() => this.signedIn = false)
   }
