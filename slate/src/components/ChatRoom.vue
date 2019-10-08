@@ -2,60 +2,40 @@
   <div>
     <h1>ROOM TITLE</h1>
     <div id="message-history">
-      <div v-for="(message, index) in messages" v-bind:class="message.sender ? 'self' : 'other'" :key="index">
-        <h2>{{ message.username }}</h2>
-        <p>{{ message.original }}</p>
-        <p>{{ message.translation }}</p>
+      <div v-for="(message, index) in chatRoomLog" v-bind:class="message.sender ? 'self' : 'other'" :key="index">
+        <p>{{ message }}</p>
       </div>
     </div>
-    <div>
-      <form>
-        <input type=text placeholder="type here">
-      </form>
-      <button v-on:click="sendMessage">click me</button>
-      <p>{{ chatRoomLog }}</p>
-    </div>
+    <MessageInput />
   </div>
 </template>
 
 <script>
 
+import MessageInput from './MessageInput.vue'
+
 export default {
   name: 'ChatRoom',
+  components: {
+    MessageInput
+  },
   data() {
     return {
-      messages: [
-        {
-          username: "marisha",
-          original: "test",
-          translation: "blablabla",
-          sender: true
-        },
-        {
-          username: "marisha",
-          original: "second message",
-          translation: "also more stuff",
-          sender: false
-        }
-      ],
       isConnected: false,
+      userName: this.$store.getters.user.username,
+      UUID: this.$store.getters.user.UUID,
+      languagePreference: this.$store.getters.languagePreference,
       chatRoomLog: []
     }
-  },
-  props: {
-    
   },
   methods: {
     connectToSocket() {
       this.$connect()
     },
-    sendMessage() {
-      this.$socket.sendObj( {"action":"sendmessage", "data":"hello"})
-    },
     listenForMessages() {
       this.$options.sockets.onmessage = (messageEvent) => {
         // fancy stuff like translation
-        this.chatRoomLog.push(messageEvent.data)
+      this.chatRoomLog.push(JSON.parse(messageEvent.data))
       }
     },
     disconnectFromSocket() {
