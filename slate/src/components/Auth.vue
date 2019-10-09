@@ -7,8 +7,17 @@
 <script>
 
 export default {
-  name: 'auth'
+  name: 'Auth',
+  beforeDestroy() {
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        this.$store.commit('createUser', user)
+      })
+      .catch(() => console.log('not signed in...'))
+  }
 }
+
+
 </script>
 
 <style>

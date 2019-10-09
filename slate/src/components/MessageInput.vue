@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <form > 
-        <textarea v-model="messageObject.message" type=text placeholder="Message..."></textarea>    
+  <div id="message-box">
+    <form id="input-form"> 
+        <textarea id="text-input" v-model="messageObject.message" type=text placeholder="Message..."></textarea>    
         <button @click.prevent="sendMessage">SEND</button>
     </form>
   </div>
@@ -39,6 +39,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+#message-box {
+    display: grid;
+    justify-items: center;
+    background-color: blue;
+    outline: .1em red solid;
+    height: 15vh;
+    width: 50vw;
+}
 
-    
+#input-form {
+    background-color: aqua;
+    outline: .1em red solid;    
+}
+
+#text-input {
+    height: 10vh;
+    width: 25vw;
+}    
 </style>
