@@ -12,6 +12,9 @@ export const store = new Vuex.Store({
     mutations: {
         createUser(state, user) {
             state.user = user
+        },
+        setLanguage(state, languagePreference) {
+            state.languagePreference = languagePreference
         }
     },
     getters: {

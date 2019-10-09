@@ -1,8 +1,6 @@
 <template>
   <div>
     <form > 
-        <!-- <p>{{this.$store.getters.userName}}</p> -->
-        <!-- <p>{{this.$store.getters.user.pool.clientId}}</p> -->
         <textarea v-model="messageObject.message" type=text placeholder="Message..."></textarea>    
         <button @click.prevent="sendMessage">SEND</button>
     </form>
@@ -21,7 +19,7 @@ export default {
         UUID: '',
         message: '',
         timestamp: '',
-        languagePreference: this.$store.getters.languagePreference
+        languagePreference: ''
       }
     }
   },
@@ -29,6 +27,7 @@ export default {
     sendMessage() {
         this.messageObject.userName = this.$store.getters.userName
         this.messageObject.UUID = this.$store.getters.user.pool.clientId
+        this.messageObject.languagePreference = this.$store.getters.languagePreference
         this.messageObject.timestamp = Math.floor(Date.now() / 1000)
         this.$socket.sendObj( this.messageObject )
     }

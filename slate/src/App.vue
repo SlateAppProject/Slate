@@ -30,6 +30,7 @@
 </template>
 
 <script>
+
 import Navbar from './components/Navbar.vue'
 import Hub from './components/Hub.vue'
 import ChatRoom from './components/ChatRoom'
