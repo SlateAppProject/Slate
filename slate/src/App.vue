@@ -35,6 +35,9 @@ import { AmplifyEventBus } from 'aws-amplify-vue'
 import { Auth } from 'aws-amplify'
 import { Slide } from 'vue-burger-menu'  
 
+import allLanguages from './assets/language-list.js'
+
+
 export default {
   name: 'app',
   components: {
@@ -63,6 +66,17 @@ export default {
       .then(user => {
         this.signedIn = true
         this.$store.commit('createUser', user)
+
+        return fetch( `slate-users/${user.username}`, {
+          method: 'GET',
+          mode: 'cors'
+        })
+          .then(response => response.json())
+          .then(apiObject => {
+            this.$store.commit('setLanguageName', apiObject.languagePref)
+            this.$store.commit('setLanguageCode', allLanguages.get(apiObject.languagePref))
+          })
+
       })
       .catch(() => this.signedIn = false)
   }

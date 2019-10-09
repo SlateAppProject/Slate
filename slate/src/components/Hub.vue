@@ -2,7 +2,7 @@
   <div id="hub-view">
     <div id="profile-details">
         <img id="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
-        <h1>{{ $store.getters.user.username.toUpperCase() }}</h1>
+        <h1>{{ $store.getters.user.username }}</h1>
         <LanguageSelection />
     </div>
     <RoomsList :rooms="chatRooms" id="chat-rooms-list"/>

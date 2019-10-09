@@ -19,7 +19,7 @@ export default {
         UUID: '',
         message: '',
         timestamp: '',
-        languagePreference: ''
+        languageCode: ''
       }
     }
   },
@@ -27,7 +27,7 @@ export default {
     sendMessage() {
         this.messageObject.userName = this.$store.getters.userName
         this.messageObject.UUID = this.$store.getters.user.pool.clientId
-        this.messageObject.languagePreference = this.$store.getters.languagePreference
+        this.messageObject.languageCode = this.$store.getters.languageCode
         this.messageObject.timestamp = Math.floor(Date.now() / 1000)
         this.$socket.sendObj( this.messageObject )
     }

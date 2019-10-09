@@ -5,57 +5,37 @@
             <option disabled value="">Select your language preference...</option>
             <option v-for="language in languages.keys()"> {{ language }} </option>
         </select>
-        <span>Selected Language: {{ selected }} </span>
+        <span>Selected Language: {{ $store.getters.languageName }} </span>
     </form>
   </div>
 </template>
 
 <script>
+import allLanguages from '../assets/language-list.js'
 
 export default {
     name: 'LanguageSelection',
     data() {
         return {
            selected: '',
-           languages: new Map([
-               [ 'Arabic', 'ar' ],
-               [ 'Chinese(Simplified)', 'zh' ],
-               [ 'Chinese(Traditional)', 'zh-TW' ],
-               [ 'Czech', 'cs' ],
-               [ 'Danish', 'da' ],
-               [ 'Dutch', 'nl' ],
-               [ 'English', 'en' ],
-               [ 'Finnish', 'fi' ],
-               [ 'French', 'fr' ],
-               [ 'German', 'de' ],
-               [ 'Greek', 'el' ],
-               [ 'Hebrew', 'he' ],
-               [ 'Hindi', 'hi' ],
-               [ 'Hungarian', 'hu' ],
-               [ 'Indonesian', 'id' ],
-               [ 'Italian', 'it' ],
-               [ 'Japanese', 'ja' ],
-               [ 'Korean', 'ko' ],
-               [ 'Malay', 'ms' ],
-               [ 'Norwegian', 'no' ],
-               [ 'Persian', 'fa' ],
-               [ 'Polish', 'pl' ],
-               [ 'Portuguese', 'pt' ],
-               [ 'Romanian', 'ro' ],
-               [ 'Russian', 'ru' ],
-               [ 'Spanish', 'es' ],
-               [ 'Swedish', 'sv' ],
-               [ 'Thai', 'th' ],
-               [ 'Turkish', 'tr' ],
-               [ 'Ukranian', 'uk' ],
-               [ 'Urdu', 'ur' ],
-               [ 'Vietnamese', 'vi' ]
-           ])
+           languages: allLanguages
         }   
     },
     methods: {
         selectedLanguage() {
-            this.$store.commit('setLanguage', this.languages.get(this.selected))
+            this.$store.commit('setLanguageName', this.selected)
+            this.$store.commit('setLanguageCode', allLanguages.get(this.selected))
+
+            let postBody = {
+                alias: this.$store.getters.user.username,
+                languagePref: this.selected
+            }
+
+            fetch(`https://y9dzb96swk.execute-api.us-west-2.amazonaws.com/dev/slate-users`, {
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify(postBody)
+            })
         }
     }
     

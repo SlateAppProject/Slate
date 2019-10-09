@@ -29,7 +29,7 @@ export default {
       isConnected: false,
       userName: this.$store.getters.user.username,
       UUID: this.$store.getters.user.UUID,
-      languagePreference: this.$store.getters.languagePreference,
+      languageCode: this.$store.getters.languageCode,
       chatRoomLog: []
     }
   },
@@ -41,7 +41,7 @@ export default {
       this.$options.sockets.onmessage = async (messageEvent) => {
         let messageFromSocket = JSON.parse(messageEvent.data)
 
-        let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languagePreference, 'en')
+        let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languageCode, this.$store.getters.languageCode)
         messageFromSocket.translatedMessage = translation.message
 
         this.chatRoomLog.push(messageFromSocket)

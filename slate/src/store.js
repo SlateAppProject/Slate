@@ -7,19 +7,24 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         user: {},
-        languagePreference: 'auto'
+        languageCode: 'auto',
+        languageName: 'English'
     },
     mutations: {
         createUser(state, user) {
             state.user = user
         },
-        setLanguage(state, languagePreference) {
-            state.languagePreference = languagePreference
+        setLanguageCode(state, languageCode) {
+            state.languageCode = languageCode
+        },
+        setLanguageName(state, languageName) {
+            state.languageName = languageName
         }
     },
     getters: {
         user: state => state.user,
-        languagePreference: state => state.languagePreference,
+        languageCode: state => state.languageCode,
+        languageName: state => state.languageName,
         userName: state => state.user.username
     }
 })
