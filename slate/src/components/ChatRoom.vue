@@ -17,6 +17,8 @@
 <script>
 import MessageInput from './MessageInput.vue'
 
+import { Auth } from 'aws-amplify'
+
 export default {
   name: 'ChatRoom',
   components: {
