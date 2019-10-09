@@ -55,7 +55,6 @@ export default {
     },
     methods: {
         selectedLanguage() {
-            console.log('Selected language')
             this.$store.commit('setLanguage', this.languages.get(this.selected))
         }
     }

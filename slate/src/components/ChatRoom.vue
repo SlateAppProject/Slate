@@ -1,12 +1,13 @@
 <template>
   <div>
     <h1>GLOBAL CHAT</h1>
-    <div id="message-history">
-      <div v-for="(message, index) in chatRoomLog" v-bind:class="message.userName === $store.getters.user.username ? 'self' : 'other'" :key="index">
+    <div id="chat-log">
+      <div v-for="(message, index) in chatRoomLog" class="chat-messages" v-bind:class="message.userName === $store.getters.user.username ? 'self' : 'other'" :key="index">
         <h3>{{message.userName}}</h3>
-        <p>{{message.timestamp}}</p>
-        <p>{{message.message}}</p>
-        <p>{{message.translatedMessage}}</p>
+        <p class="timestamp">{{message.timestamp}}</p>
+        <img class="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
+        <p class="original-message">{{message.message}}</p>
+        <p class="translated-message">{{message.translatedMessage}}</p>
       </div>
     </div>
     <MessageInput />
@@ -77,10 +78,26 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-#message-history {
+#chat-log {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
+}
+
+.chat-messages {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% auto;
+  height: 25vh;
+  width: 25vw;
+  font-size: 2vw;
+  outline: grey .1em solid;
+}
+
+.avatar-image {
+  height: 5vh;
+  width: 5vw;
+  border-radius: 50%;
 }
 
 .self {
