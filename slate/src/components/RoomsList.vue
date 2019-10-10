@@ -5,7 +5,7 @@
       <div>
         <p> ALL CHAT </p>
       </div>
-      <div v-for="(room, index) in rooms" :key="index">
+      <div v-for="(room, index) in rooms" :key="index" @click="roomSelect($event)">
           <p> {{ room }} </p>     
       </div>
     </div>
@@ -21,6 +21,11 @@ export default {
             type: Array,
             required: true
         }
+    },
+    methods: {
+      roomSelect(event) {
+        this.$store.commit('setCurrentRoom', event.target.innerHTML)
+      }
     }
 }
 </script>

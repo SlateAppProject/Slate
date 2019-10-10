@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Connection />
     <h1>GLOBAL CHAT</h1>
     <div id="chat-log">
       <div v-for="(message, index) in chatRoomLog" class="chat-messages" v-bind:class="message.userName === $store.getters.user.username ? 'self' : 'other'" :key="index">
@@ -15,14 +16,17 @@
 </template>
 
 <script>
+
 import MessageInput from './MessageInput.vue'
+import Connection from './Connection.vue'
 
 import { Auth } from 'aws-amplify'
 
 export default {
   name: 'ChatRoom',
   components: {
-    MessageInput
+    MessageInput,
+    Connection
   },
   data() {
     return {
@@ -34,21 +38,20 @@ export default {
     }
   },
   methods: {
-    connectToSocket() {
-      this.$connect()
-    },
+    
     listenForMessages() {
-      this.$options.sockets.onmessage = async (messageEvent) => {
+        this.$options.sockets.onmessage = async messageEvent => {
+        console.log(JSON.parse(messageEvent.body))
+
         let messageFromSocket = JSON.parse(messageEvent.data)
 
-        let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languageCode, this.$store.getters.languageCode)
-        messageFromSocket.translatedMessage = translation.message
+      
+          let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languageCode, this.$store.getters.languageCode)
+          messageFromSocket.translatedMessage = translation.message
 
-        this.chatRoomLog.push(messageFromSocket)
+          this.chatRoomLog.push(messageFromSocket)
+        
       }
-    },
-    disconnectFromSocket() {
-      this.$disconnect()
     },
     async translateMessage(inputMessage, inputLanguage, outputLanguage) {
       const api = 'https://rgtk0416cl.execute-api.us-west-2.amazonaws.com/dev/text'
@@ -64,15 +67,12 @@ export default {
         cache: 'default'
       })
       let message = response.json()
+
       return message
     }
   },
-  beforeMount() {
-    this.connectToSocket()
+  mounted() {
     this.listenForMessages()
-  },
-  beforeDestroy() {
-    this.disconnectFromSocket()
   }
 }
 </script>

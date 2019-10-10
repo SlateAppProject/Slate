@@ -19,7 +19,6 @@ import RoomsList from './RoomsList.vue'
 import LanguageSelection from './LanguageSelection.vue'
 import allLanguages from '../assets/language-list.js'
 
-
 export default {
     components: {
         RoomsList,
@@ -40,7 +39,6 @@ export default {
             for ( let i = 0; i < length; i++ ) {
                 result += characters.charAt(Math.floor(Math.random() * charactersLength))
             }
-            console.log("i am here" + result)
 
             return result
         }  
