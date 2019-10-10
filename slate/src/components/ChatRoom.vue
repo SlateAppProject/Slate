@@ -1,7 +1,7 @@
 <template>
   <div>
     <Connection />
-    <h1>GLOBAL CHAT</h1>
+    <h1>{{$store.getters.currentRoom}}</h1>
     <div id="chat-log">
       <div v-for="(message, index) in chatRoomLog" class="chat-messages" v-bind:class="message.userName === $store.getters.user.username ? 'self' : 'other'" :key="index">
         <h3>{{message.userName}}</h3>
@@ -19,8 +19,8 @@
 
 import MessageInput from './MessageInput.vue'
 import Connection from './Connection.vue'
-
 import { Auth } from 'aws-amplify'
+import allLanguages from '../assets/language-list.js'
 
 export default {
   name: 'ChatRoom',
@@ -34,23 +34,35 @@ export default {
       userName: this.$store.getters.user.username,
       UUID: this.$store.getters.user.UUID,
       languageCode: this.$store.getters.languageCode,
-      chatRoomLog: []
+      chatRoomLog: [],
+      languages: allLanguages
     }
   },
   methods: {
     
     listenForMessages() {
         this.$options.sockets.onmessage = async messageEvent => {
-        console.log(JSON.parse(messageEvent.body))
-
         let messageFromSocket = JSON.parse(messageEvent.data)
+        if (messageFromSocket.message === 'Internal server error'){
 
-      
-          let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languageCode, this.$store.getters.languageCode)
+        } else {
+          let translationOutputLang = this.$store.getters.languageCode
+          if (this.$store.getters.currentRoom !== 'GLOBAL CHAT') {
+            console.log(this.$store.getters.currentRoom)
+            console.log(this.languages.get(this.$store.getters.currentRoom))
+            let current = this.$store.getters.currentRoom
+            console.log('German' == `${current}`)
+            translationOutputLang = this.languages.get(this.$store.getters.currentRoom)
+          }
+
+          console.log("message lang " + messageFromSocket.languageCode)
+          console.log('output lang ' + translationOutputLang)
+
+          let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languageCode, translationOutputLang)
           messageFromSocket.translatedMessage = translation.message
 
-          this.chatRoomLog.push(messageFromSocket)
-        
+          this.chatRoomLog.unshift(messageFromSocket)
+        }
       }
     },
     async translateMessage(inputMessage, inputLanguage, outputLanguage) {
@@ -81,19 +93,24 @@ export default {
 <style scoped>
 
 #chat-log {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 50vh;
+  width: 90%;
+  margin: auto;
+  overflow: auto;
+  background-color: #B7BFC7;
+  border-radius: 10px;
+  align-content: stretch;
 }
 
 .chat-messages {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 10% auto;
   height: 25vh;
   width: 25vw;
   font-size: 2vw;
-  outline: grey .1em solid;
+  background-color: white;
+  margin: 5px 10px;
+  border-radius: 10px;
 }
 
 .avatar-image {
@@ -103,11 +120,11 @@ export default {
 }
 
 .self {
-  justify-self: end;
+  align-self: flex-end;
 }
 
 .other {
-  justify-self: start;
+  align-self: flex-end;
 }
 
 .center {

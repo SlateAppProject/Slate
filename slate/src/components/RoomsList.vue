@@ -1,13 +1,13 @@
 <template>
   <div >
     <h2>CHAT ROOMS</h2>
-    <div id="chatRooms">
-      <div>
-        <p> ALL CHAT </p>
-      </div>
-      <div v-for="(room, index) in rooms" :key="index" @click="roomSelect($event)">
-          <p> {{ room }} </p>     
-      </div>
+    <div id="chatRooms" @click="roomSelect($event)">
+      <router-link tag="div" to="/ChatRoom">
+        <p id="GLOBAL CHAT"> GLOBAL CHAT </p>
+      </router-link>
+      <router-link tag="div" to="/ChatRoom" v-for="room in rooms">
+          <p :id="room"> {{ room }} </p>     
+      </router-link>
     </div>
   </div>
 </template>
@@ -24,7 +24,19 @@ export default {
     },
     methods: {
       roomSelect(event) {
-        this.$store.commit('setCurrentRoom', event.target.innerHTML)
+        this.$store.commit('setCurrentRoom', event.target.id)
+
+        let postBody = {
+          alias: this.$store.getters.user.username,
+          languagePref: this.$store.getters.languageName,
+          roomId: this.$store.getters.currentRoom
+        }
+
+        fetch(`https://y9dzb96swk.execute-api.us-west-2.amazonaws.com/dev/slate-users`, {
+          method: 'POST',
+          mode: 'cors',
+          body: JSON.stringify(postBody)
+        })
       }
     }
 }

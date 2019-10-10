@@ -7,13 +7,24 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         user: {},
-        languageCode: 'auto',
+        languageCode: 'en',
         languageName: 'English',
-        currentRoom: ''
+        currentRoom: '',
+        socket: {
+            isConnected: false,
+            reconnectError: false,
+        }
     },
     mutations: {
         SOCKET_ONOPEN(state, event) {
-            console.log('on open')
+            Vue.prototype.$socket = event.currentTarget
+            state.socket.isConnected = true            
+        },
+        SOCKET_ONCLOSE (state, event)  {
+            state.socket.isConnected = false
+        },
+        SOCKET_ONMESSAGE (state, message)  {
+            let todo = message
         },
         createUser(state, user) {
             state.user = user
@@ -33,6 +44,7 @@ export const store = new Vuex.Store({
         languageCode: state => state.languageCode,
         languageName: state => state.languageName,
         userName: state => state.user.username,
-        currentRoom: state => state.currentRoom
+        currentRoom: state => state.currentRoom,
+        connectionStatus: state => state.socket.isConnected
     }
 })

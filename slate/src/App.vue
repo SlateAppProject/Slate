@@ -2,16 +2,15 @@
   <div id="app">
     <nav id="navbar">
       <span id="banner">
-        <h1 id="app-title">SLATE</h1>
+        <router-link to="/Hub">
+          <h1 id="app-title">SLATE</h1>
+        </router-link>
         <Slide right>
           <router-link tag="p" to="/">
             <a>Home</a>
           </router-link>
           <router-link tag="p" to="/Hub">
             <a>Hub</a>
-          </router-link>
-          <router-link tag="p" to="/ChatRoom" v-if="signedIn">
-            <a>Chat Room</a>
           </router-link>
           <router-link tag="p" to="/Auth" v-if="!signedIn">
             <a>Sign Up / Sign In</a>
@@ -74,6 +73,7 @@ export default {
           .then(apiObject => {
             this.$store.commit('setLanguageName', apiObject.languagePref)
             this.$store.commit('setLanguageCode', allLanguages.get(apiObject.languagePref))
+            this.$store.commit('setCurrentRoom', apiObject.roomId)
           })
       })
       .catch(() => this.signedIn = false)

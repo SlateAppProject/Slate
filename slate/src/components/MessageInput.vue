@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// TODO: roomId connection
+import moment from 'moment'
 
 export default {
   name: 'MessageInput',
@@ -30,7 +30,7 @@ export default {
         this.messageObject.userName = this.$store.getters.userName
         this.messageObject.UUID = this.$store.getters.user.pool.clientId
         this.messageObject.languageCode = this.$store.getters.languageCode
-        this.messageObject.timestamp = Math.floor(Date.now() / 1000)
+        this.messageObject.timestamp = moment().format('LLLL')
         this.messageObject.roomId = this.$store.getters.currentRoom
         this.$socket.sendObj( this.messageObject )
     }
