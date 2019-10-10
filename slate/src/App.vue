@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web&display=swap');
 
   #app {
     font-family: 'Titillium Web', sans-serif;
@@ -153,8 +153,8 @@ export default {
     background: rgba(0, 0, 0, 0.3);
   }
   .bm-item-list > * > a {
-      margin-left: 10px;
-      font-weight: 700;
-      color: white;
-    }
+    margin-left: 10px;
+    font-weight: 700;
+    color: #B7BFC7;
+  }
 </style>
