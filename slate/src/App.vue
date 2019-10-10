@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web&display=swap');
 
   #app {
     font-family: 'Titillium Web', sans-serif;
@@ -137,5 +137,24 @@ export default {
     border: 2px solid #183C43;
     /* GREEN FOUND ABOVE */
     border-radius: 5px;
+  }
+  .bm-burger-bars {
+    background-color: #B7BFC7;
+  }
+  .bm-cross {
+    background: #B7BFC7;
+  }
+  .bm-menu {
+    background-color: #183C43; /* Black*/
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
+  }
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .bm-item-list > * > a {
+    margin-left: 10px;
+    font-weight: 700;
+    color: #B7BFC7;
   }
 </style>
