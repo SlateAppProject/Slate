@@ -1,11 +1,12 @@
 <template>
   <div >
     <form > 
+        <div>Your language is currently set to: {{ $store.getters.languageName }} </div>
+        <label>Choose your language:</label>
         <select v-model="selected" @change="selectedLanguage">
-            <option disabled value="">Select your language preference...</option>
+            <option disabled value="">Language</option>
             <option v-for="language in languages.keys()"> {{ language }} </option>
         </select>
-        <span>Selected Language: {{ $store.getters.languageName }} </span>
     </form>
   </div>
 </template>

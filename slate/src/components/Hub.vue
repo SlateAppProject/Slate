@@ -1,21 +1,24 @@
 <template>
-  <div id="hub-view">
-    <div id="profile-details">
-        <img id="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
-        <h1>{{ $store.getters.user.username }}</h1>
-        <LanguageSelection />
+  <div>
+    <div id="hub-view">
+        <div id="profile-details">
+            <img id="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
+            <h1>Welcome, {{ $store.getters.user.username }}.</h1>
+            <LanguageSelection />
+        </div>
+        <RoomsList :rooms="languages.keys()" id="chat-rooms-list"/>
     </div>
-    <RoomsList :rooms="chatRooms" id="chat-rooms-list"/>
   </div>
 </template>
 
 <script>
+import { Auth } from 'aws-amplify'
 
 import Home from './Home.vue'
 import RoomsList from './RoomsList.vue'
 import LanguageSelection from './LanguageSelection.vue'
+import allLanguages from '../assets/language-list.js'
 
-import { Auth } from 'aws-amplify'
 
 export default {
     components: {
@@ -25,16 +28,7 @@ export default {
     name: 'Hub',
     data() {
         return {
-            chatRooms: [
-                'German',
-                'Spanish',
-                'Urdu',
-                'Swahili',
-                'Arabic',
-                'Chine',
-                'Russian',
-                'Farsi'
-            ],
+            languages: allLanguages
         }   
     },
     beforeCreate() {
@@ -50,9 +44,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     #hub-view {
+        width: 100%;
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
     }
 
     #profile-details {
@@ -61,16 +58,11 @@ export default {
 
     #avatar-image {
         height: 25vh;
-        width: 25vw;
+        width: 25vh;
         border-radius: 50%;
     }
 
-    #favorite-rooms-list {
-        grid-area: 2 / 1 / 2 / 1;
-
-    }
-
     #chat-rooms-list {
-        
+        grid-area: 1 / 2 / 1 / 2;
     }
 </style>

@@ -10,7 +10,7 @@
         <p class="translated-message">{{message.translatedMessage}}</p>
       </div>
     </div>
-    <MessageInput />
+    <MessageInput class="center"/>
   </div>
 </template>
 
@@ -110,5 +110,8 @@ export default {
   justify-self: start;
 }
 
+.center {
+  margin: auto;
+}
     
 </style>

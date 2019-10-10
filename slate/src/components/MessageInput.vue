@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// TODO: roomId connection
 
 export default {
   name: 'MessageInput',
@@ -19,7 +20,8 @@ export default {
         UUID: '',
         message: '',
         timestamp: '',
-        languageCode: ''
+        languageCode: '',
+        roomId: '',
       }
     }
   },
