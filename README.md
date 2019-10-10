@@ -33,7 +33,10 @@ Why should we care about your product?
 A web application with a single chatroom for users to chat in their native language that is translated into English. 
 
 #### Stretch
-Multi-chatrooms for users to join depending on which translated language is needed. 
+ - Multi-chatrooms for users to join depending on which translated language is needed. 
+ - Direct Messaging
+ - User profile pictures
+ - Dark/Light themes
 
 ### Functional Requirements
 1. A user can sign up for the app. 
