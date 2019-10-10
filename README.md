@@ -3,18 +3,57 @@
 # Team Meh
 
 ## Team Members
- * Brandon Hurrington
- * Manish B KC
- * Marisha Hoza
- * Peter Lee
+ * Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
  
 ## Product Description
 A translation chat app geared towards groups of foreign language enthusiasts. 
 
-## Important Documents
-* [Team Agreement](docs/Team-Agreement.md)
-* [Glo Board](https://app.gitkraken.com/glo/board/XZOBl6r2-gAPzcbw)
-* [Whimsical Wireframe](https://whimsical.com/4Jpa6FyPKYeXfBFEGr25dt)
+## Vision
+
+What is the vision of this product?
+- Our product vision is to create a translation chat app geared towards groups of foreign language enthusiasts. It will have multi-chatrooms that are language specific so user's can communicate in their own native language. 
+
+What pain point does this project solve?
+- Individual's language preference differ and this makes communication difficutl. Rather than using a seperate application to translate correspondance, our app will translate it in real-time within the chatroom. This allows for a seemless communication experience. 
+
+Why should we care about your product?
+- This product will help alleviate the ineffectiveness of communication between different languages. 
+
+## Scope (In/Out)
+- IN 
+	- The app will signup users and once joined they can enter a chatroom.
+	- The app lets users chat in their speicific language preferance. 
+	- The app will authenticate users during login.
+
+- OUT 
+	- This is not a mobile-first app. 
+	- The app will not retain any messages after a chatroom a left. 
+
+### MVP
+A web application with a single chatroom for users to chat in their native language that is translated into English. 
+
+### Stretch
+Multi-chatrooms for users to join depending on which translated language is needed. 
+
+## Functional Requirements
+1. A user can sign up for the app. 
+2. A user can login and join a chatroom.
+3. A user can type in the chatroom and it will be translated to another language. 
+4. A user can logout or the app.
+
+## Non-Functional Requirements
+ #### Security
+ - To ensure user information and privacy, the app will utilize AWS Cognito to authenticate a user. The app will also not retain any discussions after a user has disconnected from the chatroom. 
+ #### Reliability
+ - Utilizing AWS services to maintain application's availabilty to users. 
+#### Scalability
+
+
+You *MUST* describe what the non-functional requirement is and how it will be implemented. Simply saying "Our project will be testable for testibility" is **NOT** acceptable. Tell us how, why, and what. 
+
+### Data Flow
+Describe the flow of data in your application. 
+Write out what happens from the time the user enters the app to the time the request process completes (The user is done with the app). Think about the "Happy Path" of the application. Describe through visuals and text what requests are made, and what data is received, in addition to any other details about how the user moves through the site. 
 
 ## Domain Model
 ![Model](https://github.com/SlateAppProject/Slate/blob/master/docs/model.jpg)
@@ -27,57 +66,8 @@ A translation chat app geared towards groups of foreign language enthusiasts.
  - Redis
  - <strike>CodeStar</strike>
  - Dynamo DB
-
-## Vision
-**Minimum Length: 3-5 sentences**
-
-What is the vision of this product?
- - Lorem Ipsum
-
-What pain point does this project solve?
-
-Why should we care about your product?
-
-## Scope (In/Out)
-- IN - What will your product do
-    - Describe the individual features that your product will do. 
-	- High overview of each. Only need to list 4-5
-	- Example:
-		- The web app will provide information to the users about all the different Cat Cafe's in the area
-		- The web app will provide both walking and driving directions to each of the destinations
-		- Users will be able to "Star" their favorite shops. 
-		- Each shop will contain reviews of the customer's experiences
-- OUT - What will your product not do. 
-  - These should be features that you will make very clear from the beginning that you will not do during development. These should be limited and very few. Pick your battles wisely. This should only be 1 or 2 things. Example: My website will never turn into an IOS or Android app.
-
-### MVP
-What will your MVP be. What is your expected minimum end product? 
-
-### Stretch
-What stretch goals are you going to aim for?
-
-## Functional Requirements
-List the functionality of your product.
-This will consist of tasks such as the following:
-1. An admin can create and delete user accounts
-2. A user can update their profile information
-3. A user can search all of the products in the inventory
-
-## Non-Functional Requirements (301 & 401 only)
-Non-functional requirements are requirements that are not 
-directly related to the functionality of the application but still important to the app.
-
-Examples include:
-1. Security
-2. Usability
-3. Testability
-4. etc....
-
-Pick 2 Non-functional requirements and describe it's functionality in your application.
-If you are stuck on what non-functional requirements are, do a quick online search and do some research. Write a minimum of 3-5 sentences to describe how the non-functional requirements fits into your app. 
-
-You *MUST* describe what the non-functional requirement is and how it will be implemented. Simply saying "Our project will be testable for testibility" is **NOT** acceptable. Tell us how, why, and what. 
-
-### Data Flow
-Describe the flow of data in your application. 
-Write out what happens from the time the user enters the app to the time the request process completes (The user is done with the app). Think about the "Happy Path" of the application. Describe through visuals and text what requests are made, and what data is received, in addition to any other details about how the user moves through the site. 
+ 
+## Important Documents
+* [Team Agreement](docs/Team-Agreement.md)
+* [Glo Board](https://app.gitkraken.com/glo/board/XZOBl6r2-gAPzcbw)
+* [Whimsical Wireframe](https://whimsical.com/4Jpa6FyPKYeXfBFEGr25dt)
