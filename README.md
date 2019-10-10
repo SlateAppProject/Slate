@@ -1,8 +1,8 @@
 # SLATE
 
-# Team Meh
+## Team Meh
 
-### Members
+#### Members
  * Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
  
 ### Product Description
@@ -17,7 +17,7 @@ What pain point does this project solve?
 - Individual's language preference differ and this makes communication difficutl. Rather than using a seperate application to translate correspondance, our app will translate it in real-time within the chatroom. This allows for a seemless communication experience. 
 
 Why should we care about your product?
-- This product will help alleviate the ineffectiveness of communication between different languages. 
+- This product will support communication between different languages. 
 
 ### Scope (In/Out)
 - IN 
