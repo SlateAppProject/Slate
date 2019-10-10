@@ -66,14 +66,11 @@ User visits our web application, and signs up for our translation chatroom produ
  - Amplify
  
 ### Other Technologies & Languages
-- Front-End
-  - JS
-  - VUE
-  - HTML/CSS
- 
-- Back-End
- 	- JS
- 	- Java
+ - JS
+ - VUE
+ - HTML/CSS
+ - JS
+ - Java
  
 ### Important Documents
 * [Team Agreement](docs/Team-Agreement.md)
