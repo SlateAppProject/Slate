@@ -47,18 +47,15 @@ Multi-chatrooms for users to join depending on which translated language is need
  #### Reliability
  - Utilizing AWS services to maintain application's availabilty to users. 
 #### Scalability
-
-
-You *MUST* describe what the non-functional requirement is and how it will be implemented. Simply saying "Our project will be testable for testibility" is **NOT** acceptable. Tell us how, why, and what. 
+ - Adopting serverless applicaion model using AWS cloud and other services will support on-demand capacity provisioning. 
 
 ### Data Flow
-Describe the flow of data in your application. 
-Write out what happens from the time the user enters the app to the time the request process completes (The user is done with the app). Think about the "Happy Path" of the application. Describe through visuals and text what requests are made, and what data is received, in addition to any other details about how the user moves through the site. 
+User visits our web application, and signs up for our translation chatroom product/service (don't worry, it's free!). User registration requirements are: name, alias, password, language preference, email, and phone number. Once registered, user can now login with their credentials. After login is authenticated, a user can choose a chatroom to join, in which a chatroom is languauge specific. Once a user clicks the chatroom and joins, he/she can start typing in their preferential language and it will be translated to the chatrooms defualt language. User can leave chatroom and sign out of web application.
 
-## Domain Model
+#### Domain Model
 ![Model](https://github.com/SlateAppProject/Slate/blob/master/docs/model.jpg)
 
-## AWS Product Assets:
+### AWS Product Assets:
  - API Gateway
  - Cognito
  - Lambda
@@ -67,7 +64,7 @@ Write out what happens from the time the user enters the app to the time the req
  - <strike>CodeStar</strike>
  - Dynamo DB
  
-## Important Documents
+### Important Documents
 * [Team Agreement](docs/Team-Agreement.md)
 * [Glo Board](https://app.gitkraken.com/glo/board/XZOBl6r2-gAPzcbw)
 * [Whimsical Wireframe](https://whimsical.com/4Jpa6FyPKYeXfBFEGr25dt)
