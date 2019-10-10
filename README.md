@@ -1,4 +1,4 @@
-# SLATE
+# [SLATE](http://slate-app-front-end.s3-website-us-west-2.amazonaws.com/#/)
 
 ### Team Meh
 Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
