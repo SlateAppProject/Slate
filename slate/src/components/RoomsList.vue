@@ -1,9 +1,14 @@
 <template>
   <div >
-    CHAT ROOMS
-    <ul>
-        <li v-for="(room, index) in rooms" :key="index"> {{ room }} </li>     
-    </ul>
+    <h2>CHAT ROOMS</h2>
+    <div id="chatRooms">
+      <div>
+        <p> ALL CHAT </p>
+      </div>
+      <div v-for="(room, index) in rooms" :key="index">
+          <p> {{ room }} </p>     
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,5 +27,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    
+  #chatRooms {
+    overflow: scroll;
+    margin: auto;
+    width: 25vw;
+    height: 60vh;
+    outline: 3px solid black;
+  }
 </style>
