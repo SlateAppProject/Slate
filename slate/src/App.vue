@@ -83,11 +83,18 @@ export default {
       .catch(() => this.signedIn = false)
   }
 }
+// Vue font pre built
+// font-family: 'Avenir', Helvetica, Arial, sans-serif;
+// Another google font option
+// font-family: 'Roboto Condensed', sans-serif;
+
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Titillium+Web&display=swap');
+
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -120,6 +127,7 @@ export default {
   #app-title {
     padding-top: 5vh;
     color: #B7BFC7;
+    font-weight: bold;
   }
   #current-page {
     background-color: white;
