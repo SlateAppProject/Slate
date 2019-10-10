@@ -21,7 +21,7 @@ Vue.use(VueRouter)
 Vue.use(AmplifyPlugin, AmplifyModules)
 
 Vue.use(VueNativeSock, 'wss://i9aw79wsv3.execute-api.us-west-2.amazonaws.com/dev', 
-  { format: 'json', connectManually: true }
+  { format: 'json', connectManually: true, store: store}
 )
 
 Vue.use(reset)
@@ -33,3 +33,5 @@ new Vue({
   store,
   render: h => h(App),
 }).$mount('#app')
+
+

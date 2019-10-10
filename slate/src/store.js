@@ -8,9 +8,13 @@ export const store = new Vuex.Store({
     state: {
         user: {},
         languageCode: 'auto',
-        languageName: 'English'
+        languageName: 'English',
+        currentRoom: ''
     },
     mutations: {
+        SOCKET_ONOPEN(state, event) {
+            console.log('on open')
+        },
         createUser(state, user) {
             state.user = user
         },
@@ -19,12 +23,16 @@ export const store = new Vuex.Store({
         },
         setLanguageName(state, languageName) {
             state.languageName = languageName
+        },
+        setCurrentRoom(state, currentRoom) {
+            state.currentRoom = currentRoom
         }
     },
     getters: {
         user: state => state.user,
         languageCode: state => state.languageCode,
         languageName: state => state.languageName,
-        userName: state => state.user.username
+        userName: state => state.user.username,
+        currentRoom: state => state.currentRoom
     }
 })
