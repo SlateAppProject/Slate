@@ -1,8 +1,6 @@
 # SLATE
 
 ## Team Meh
-
-#### Members
  * Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
  
 ### Product Description
