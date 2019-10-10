@@ -1,7 +1,7 @@
 # SLATE
 
-## Team Meh
-**Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee**
+### Team Meh
+Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
  
 ### Product Description
 A translation chat app geared towards groups of foreign language enthusiasts. 
