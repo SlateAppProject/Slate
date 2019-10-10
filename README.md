@@ -52,17 +52,28 @@ Multi-chatrooms for users to join depending on which translated language is need
 ### Data Flow
 User visits our web application, and signs up for our translation chatroom product/service (don't worry, it's free!). User registration requirements are: name, alias, password, language preference, email, and phone number. Once registered, user can now login with their credentials. After login is authenticated, a user can choose a chatroom to join, in which a chatroom is languauge specific. Once a user clicks the chatroom and joins, he/she can start typing in their preferential language and it will be translated to the chatrooms defualt language. User can leave chatroom and sign out of web application.
 
-#### Domain Model
+#### Architecture
 ![Architecture](https://github.com/SlateAppProject/Slate/blob/dev/docs/arc.jpg)
 
 ### AWS Product Assets:
- - API Gateway
+ - API Gateway & WebSockets
  - Cognito
  - Lambda
  - Translate
- - Redis
+ - <strike>Redis</strike>
  - <strike>CodeStar</strike>
  - Dynamo DB
+ - Amplify
+ 
+### Other Technologies & Languages
+* Front-End
+ - JS
+ - VUE
+ - HTML/CSS
+ 
+* Back-End
+ - JS
+ - Java
  
 ### Important Documents
 * [Team Agreement](docs/Team-Agreement.md)
