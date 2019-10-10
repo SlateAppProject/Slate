@@ -16,23 +16,30 @@ export default {
         }
       }
     },
+    computed: {
+        onConnectionStatusChange() {
+            return this.$store.getters.connectionStatus
+        }
+    },
+    watch: {
+        onConnectionStatusChange(newState, oldState) {
+            if (newState === true) {
+                this.roomConnection()
+                console.log('connected, supposedly')
+            }
+        }
+    },
     methods: {
         connectToSocket() {
             return this.$connect() 
         },
         roomConnection() {
-            this.$options.sockets.onmessage = async messageEvent => {
-                console.log(JSON.parse(messageEvent))
-
-            //     let messageFromSocket = JSON.parse(messageEvent.data)
-            //     this.messageObject.roomId = this.$store.getters.currentRoom
-            // this.$socket.sendObj( this.messageObject )
-            }
-      
+            this.messageObject.roomId = this.$store.getters.currentRoom
+            this.$socket.sendObj( this.messageObject ) 
         },
         disconnectFromSocket() {
             this.$disconnect()
-        },
+        }
     },
     mounted() {
         this.connectToSocket()

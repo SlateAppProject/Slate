@@ -29,7 +29,8 @@ export default {
 
             let postBody = {
                 alias: this.$store.getters.user.username,
-                languagePref: this.selected
+                languagePref: this.selected,
+                roomId: this.$store.getters.currentRoom
             }
 
             fetch(`https://y9dzb96swk.execute-api.us-west-2.amazonaws.com/dev/slate-users`, {
