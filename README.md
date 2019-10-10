@@ -2,13 +2,13 @@
 
 # Team Meh
 
-## Team Members
+### Members
  * Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
  
-## Product Description
+### Product Description
 A translation chat app geared towards groups of foreign language enthusiasts. 
 
-## Vision
+### Vision
 
 What is the vision of this product?
 - Our product vision is to create a translation chat app geared towards groups of foreign language enthusiasts. It will have multi-chatrooms that are language specific so user's can communicate in their own native language. 
@@ -19,7 +19,7 @@ What pain point does this project solve?
 Why should we care about your product?
 - This product will help alleviate the ineffectiveness of communication between different languages. 
 
-## Scope (In/Out)
+### Scope (In/Out)
 - IN 
 	- The app will signup users and once joined they can enter a chatroom.
 	- The app lets users chat in their speicific language preferance. 
@@ -29,19 +29,19 @@ Why should we care about your product?
 	- This is not a mobile-first app. 
 	- The app will not retain any messages after a chatroom a left. 
 
-### MVP
+#### MVP
 A web application with a single chatroom for users to chat in their native language that is translated into English. 
 
-### Stretch
+#### Stretch
 Multi-chatrooms for users to join depending on which translated language is needed. 
 
-## Functional Requirements
+### Functional Requirements
 1. A user can sign up for the app. 
 2. A user can login and join a chatroom.
 3. A user can type in the chatroom and it will be translated to another language. 
 4. A user can logout or the app.
 
-## Non-Functional Requirements
+### Non-Functional Requirements
  #### Security
  - To ensure user information and privacy, the app will utilize AWS Cognito to authenticate a user. The app will also not retain any discussions after a user has disconnected from the chatroom. 
  #### Reliability
