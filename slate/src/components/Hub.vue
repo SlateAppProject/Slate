@@ -2,7 +2,7 @@
   <div>
     <div id="hub-view">
         <div id="profile-details">
-            <img id="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
+            <img id="avatar-image" src="https://avatars.dicebear.com/v2/human/${seed}.svg" alt=""/>
             <h1>Welcome, {{ $store.getters.user.username }}.</h1>
             <LanguageSelection />
         </div>
@@ -28,15 +28,29 @@ export default {
     name: 'Hub',
     data() {
         return {
-            languages: allLanguages
+            languages: allLanguages,
+            seed: this.randomSeedGenerator()
         }   
     },
+    methods: {
+        randomSeedGenerator() {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+            let charactersLength = characters.length
+            for ( let i = 0; i < length; i++ ) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength))
+            }
+            console.log("i am here" + result)
+
+            return result
+        }  
+    },
     beforeCreate() {
-    Auth.currentAuthenticatedUser()
-      .then(user => {
-        this.$store.commit('createUser', user)
-      })
-      .catch(() => console.log('not signed in...'))
+        Auth.currentAuthenticatedUser()
+        .then(user => {
+            this.$store.commit('createUser', user)
+        })
+        .catch(() => console.log('not signed in...'))
     }
 }
 </script>
