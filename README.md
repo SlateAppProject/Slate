@@ -64,6 +64,7 @@ User visits our web application, and signs up for our translation chatroom produ
  - <strike>CodeStar</strike>
  - Dynamo DB
  - Amplify
+ - S3
  
 ### Other Technologies & Languages
  - JS
@@ -76,3 +77,16 @@ User visits our web application, and signs up for our translation chatroom produ
 * [Team Agreement](docs/Team-Agreement.md)
 * [Glo Board](https://app.gitkraken.com/glo/board/XZOBl6r2-gAPzcbw)
 * [Whimsical Wireframe](https://whimsical.com/4Jpa6FyPKYeXfBFEGr25dt)
+
+### References
+- [Build a multilingual chat app with React and Amazon Translate](https://pusher.com/tutorials/multilingual-chat-react-amazon-translate)
+- [Multilingual Chat App with PubNub ChatEngine and AWS Translate](https://github.com/shyampurk/ChatEngineWithAWSTranslate)
+- [Using Web Socket AWS API Gateway to allow your event driven Lambda based API to push data to your clients](https://medium.com/build-succeeded/using-web-socket-aws-api-gateway-to-allow-your-event-driven-lambda-based-api-to-push-data-to-your-212855db344b)
+- [Integrating Vue.js and Socket.io](https://alligator.io/vuejs/vue-socketio/)
+- [Announcing WebSocket APIs in Amazon API Gateway](https://aws.amazon.com/blogs/compute/announcing-websocket-apis-in-amazon-api-gateway/)
+- [Vue-native-websockets](https://www.npmjs.com/package/vue-native-websocket)
+- [A simple chat architecture for your MVP](https://cheesecakelabs.com/blog/simple-chat-architecture-mvp/)
+- [How to Build Production-ready Vue Authentication](https://dev.to/dabit3/how-to-build-production-ready-vue-authentication-23mk)
+- [Using Amazon Polly with Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/examples-polly.html)
+- [How Amazon Translate Works](https://docs.aws.amazon.com/translate/latest/dg/how-it-works.html#how-it-works-language-codes)
+
