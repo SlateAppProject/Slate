@@ -24,8 +24,8 @@ Why should you care about our product?
 	- The app will authenticate users during login.
 
 - OUT 
-	- This is not a mobile-first app. 
 	- The app will not retain any messages after a chatroom a left. 
+	- Direct Messaging
 
 #### MVP
 A web application with a single chatroom for users to communicate and receive incoming messages in their language preference.
