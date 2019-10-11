@@ -6,9 +6,12 @@
         <img src='../assets/sadie.jpg' class="card-dev-image"  alt="profile-pic"/>
         <div class="card-body">
           <h4 class="card-title">Marisha Hoza</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at semper lorem, ut auctor augue. </p>
+          <p class="card-text">Be uncommon.</p>
           <a href="https://github.com/MarishaHoza" class="github-link-buttons">
               <img src='../assets/octocat.png' class="github-logo" aria-hidden="true" />@MarishaHoza
+          </a>
+          <a href="https://https://www.linkedin.com/in/marishahoza" class="github-link-buttons">
+            <img src='../assets/linkedin.png' class="linkedin-logo" aria-hidden="true" />
           </a>
         </div>
       </div>
