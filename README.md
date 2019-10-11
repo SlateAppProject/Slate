@@ -28,7 +28,7 @@ Why should we care about your product?
 	- The app will not retain any messages after a chatroom a left. 
 
 #### MVP
-A web application with a single chatroom for users to chat in their native language that is translated into English. 
+A web application with a single chatroom for users to communicate and receive incoming messages in their language preference.
 
 #### Stretch
  - Multi-chatrooms for users to join depending on which translated language is needed. 
