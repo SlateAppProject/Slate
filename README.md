@@ -56,7 +56,7 @@ A web application with a single chatroom for users to communicate and receive in
 ### Data Flow
 User visits our web application, and signs up for our translation chatroom product/service (don't worry, it's free!). User registration requirements are: name, alias, password, language preference, email, and phone number. Once registered, user can now login with their credentials. After login is authenticated, a user can choose a chatroom to join, in which a chatroom is languauge specific. Once a user clicks the chatroom and joins, he/she can start typing in their preferential language and it will be translated to the chatrooms defualt language. User can leave chatroom and sign out of web application.
 
-### AWS Product Assets:
+### AWS Assets:
  - API Gateway & WebSockets
  - Cognito
  - Lambda
@@ -66,6 +66,7 @@ User visits our web application, and signs up for our translation chatroom produ
  - Dynamo DB
  - Amplify
  - S3
+ - CloudWatch
  
 ### Other Technologies & Languages
  - JS
