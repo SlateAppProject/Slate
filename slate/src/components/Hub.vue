@@ -2,7 +2,7 @@
   <div>
     <div id="hub-view">
         <div id="profile-details">
-            <img id="avatar-image" src="https://avatars.dicebear.com/v2/human/${seed}.svg" alt=""/>
+            <img id="avatar-image" src="https://source.unsplash.com/random" alt=""/>
             <h1>Welcome, {{ $store.getters.user.username }}.</h1>
             <LanguageSelection/>
         </div>
