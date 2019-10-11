@@ -46,7 +46,7 @@ A web application with a single chatroom for users to communicate and receive in
  #### Security
  - To ensure user information and privacy, the app will utilize AWS Cognito to authenticate a user. The app will also not retain any discussions after a user has disconnected from the chatroom. 
  #### Reliability
- - Utilizing AWS services to maintain application's availabilty to users. 
+ - Utilizing AWS cloud services to maintain application's availabilty to users. 
 #### Scalability
  - Adopting serverless applicaion model using AWS cloud and other services will support on-demand capacity provisioning. 
 
