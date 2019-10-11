@@ -1,23 +1,21 @@
-# SLATE
+# [SLATE](http://slate-app-front-end.s3-website-us-west-2.amazonaws.com/#/)
 
-## Team Meh
-
-#### Members
- * Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
+### Team Meh
+Brandon Hurrington | Manish B KC | Marisha Hoza | Peter Lee
  
 ### Product Description
 A translation chat app geared towards groups of foreign language enthusiasts. 
 
 ### Vision
 
-What is the vision of this product?
+What is the vision of our product?
 - Our product vision is to create a translation chat app geared towards groups of foreign language enthusiasts. It will have multi-chatrooms that are language specific so user's can communicate in their own native language. 
 
 What pain point does this project solve?
-- Individual's language preference differ and this makes communication difficutl. Rather than using a seperate application to translate correspondance, our app will translate it in real-time within the chatroom. This allows for a seemless communication experience. 
+- Individual language knowledge and preferences differ, which can strain communication and reduce clarity of intention. Rather than using a seperate application to translate correspondence, our app will translate it in real-time within the chatroom. This will allow for a seemless communication experience. 
 
-Why should we care about your product?
-- This product will support communication between different languages. 
+Why should you care about our product?
+- This product will support communication between different groups of people with disparate backgrounds. 
 
 ### Scope (In/Out)
 - IN 
@@ -30,10 +28,13 @@ Why should we care about your product?
 	- The app will not retain any messages after a chatroom a left. 
 
 #### MVP
-A web application with a single chatroom for users to chat in their native language that is translated into English. 
+A web application with a single chatroom for users to communicate and receive incoming messages in their language preference.
 
 #### Stretch
-Multi-chatrooms for users to join depending on which translated language is needed. 
+ - Multi-chatrooms for users to join depending on which translated language is needed. 
+ - Direct Messaging
+ - User profile pictures
+ - Dark/Light themes
 
 ### Functional Requirements
 1. A user can sign up for the app. 
@@ -69,6 +70,9 @@ User visits our web application, and signs up for our translation chatroom produ
 ### Other Technologies & Languages
  - JS
  - VUE
+   - Vue Router
+   - Vuex
+   - Vue Native Websocket
  - HTML/CSS
  - JS
  - Java
