@@ -8,14 +8,14 @@ A translation chat app geared towards groups of foreign language enthusiasts.
 
 ### Vision
 
-What is the vision of this product?
+What is the vision of our product?
 - Our product vision is to create a translation chat app geared towards groups of foreign language enthusiasts. It will have multi-chatrooms that are language specific so user's can communicate in their own native language. 
 
 What pain point does this project solve?
-- Individual's language preference differ and this makes communication difficutl. Rather than using a seperate application to translate correspondance, our app will translate it in real-time within the chatroom. This allows for a seemless communication experience. 
+- Individual language knowledge and preferences differ, which can strain communication and reduce clarity of intention. Rather than using a seperate application to translate correspondence, our app will translate it in real-time within the chatroom. This will allow for a seemless communication experience. 
 
-Why should we care about your product?
-- This product will support communication between different languages. 
+Why should you care about our product?
+- This product will support communication between different groups of people with disparate backgrounds. 
 
 ### Scope (In/Out)
 - IN 
@@ -70,6 +70,9 @@ User visits our web application, and signs up for our translation chatroom produ
 ### Other Technologies & Languages
  - JS
  - VUE
+   - Vue Router
+   - Vuex
+   - Vue Native Websocket
  - HTML/CSS
  - JS
  - Java
