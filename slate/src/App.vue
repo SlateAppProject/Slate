@@ -2,12 +2,12 @@
   <div id="app">
     <nav id="navbar">
       <span id="banner">
-        <router-link to="/Hub">
+        <router-link to="/Hub" id="title-link">
           <h1 id="app-title">SLATE</h1>
         </router-link>
         <Slide right>
           <router-link tag="p" to="/">
-            <a>Home</a>
+            <a>SLATE</a>
           </router-link>
           <router-link tag="p" to="/Hub">
             <a>Hub</a>
@@ -98,6 +98,7 @@ export default {
     color: #2c3e50;
     background-color: #B7BFC7;
     min-height: 100vh;
+    padding-bottom: 5vh;
   }
   .nav {
     display: flex;
@@ -119,12 +120,13 @@ export default {
   }
   #navbar {
     background-color: #2c3e50;
-    height: 15vh;
+    height: 20vh;
   }
   #app-title {
     padding-top: 5vh;
     color: #B7BFC7;
     font-weight: bold;
+    font-size: 8vh;
   }
   #current-page {
     background-color: white;
@@ -153,5 +155,11 @@ export default {
     margin-left: 10px;
     font-weight: 700;
     color: #B7BFC7;
+  }
+  #title-link:link {
+    text-decoration: none;
+  }
+  #title-link:visited {
+    text-decoration: none;
   }
 </style>

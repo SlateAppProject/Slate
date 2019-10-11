@@ -124,7 +124,7 @@ export default {
 }
 
 .other {
-  align-self: flex-end;
+  align-self: flex-start;
 }
 
 .center {
