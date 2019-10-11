@@ -1,9 +1,11 @@
 <template>
-  <div id="message-box">
-    <form id="input-form"> 
-        <textarea id="text-input" v-model="messageObject.message" type=text placeholder="Type to chat..." required></textarea>    
-        <button @click.prevent="sendMessage">SEND</button>
-    </form>
+  <div>
+    <div id="message-box">
+      <form id="input-form"> 
+          <textarea id="text-input" v-model="messageObject.message" type=text placeholder="Type to chat..." required></textarea>    
+          <button @click.prevent="sendMessage">SEND</button>
+      </form>
+    </div>
   </div>
 </template>
 
