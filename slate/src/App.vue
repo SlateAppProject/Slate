@@ -162,4 +162,10 @@ export default {
   #title-link:visited {
     text-decoration: none;
   }
+
+  @media (max-width: 979px) {
+    #current-page {
+      width: 95%;
+    }
+  }
 </style>

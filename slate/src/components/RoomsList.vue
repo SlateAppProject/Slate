@@ -62,4 +62,10 @@ export default {
   .room:hover {
     background-color: #B7BFC7;
   }
+  @media (max-width: 979px) {
+        #chatRooms {
+            width: 90%;
+            margin: auto;
+        }
+    }
 </style>

@@ -78,4 +78,19 @@ export default {
         grid-area: 1 / 2 / 1 / 2;
         margin-top: 2.5vh;
     }
+    @media (max-width: 979px) {
+        #avatar-image {
+            height: 20vw;
+            width: 20vw;
+        }
+        #profile-details {
+            margin-left: 10px;
+        }
+        #chat-rooms-list {
+            margin-right: 2px;
+        }
+        #hub-view {
+            grid-template-columns: 2fr 3fr;
+        }
+    }
 </style>

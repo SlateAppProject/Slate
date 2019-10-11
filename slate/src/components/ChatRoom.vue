@@ -169,7 +169,7 @@ export default {
 }
 
 .center {
-  margin: auto;
+  margin: 2% auto;
 }
 
 .explanation {

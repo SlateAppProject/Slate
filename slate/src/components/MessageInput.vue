@@ -72,7 +72,7 @@ button {
   align-self: center;
   width: 25%;
   min-width: 100px;
-  margin: 1px auto;
+  margin: 1.5% auto;
   border-radius: 5px;
   border: none;
   background-color: #2c3e50;
