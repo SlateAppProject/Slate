@@ -1,9 +1,9 @@
 <template>
   <div >
     <form > 
-        <div>Your language is currently set to: {{ $store.getters.languageName }} </div>
+        <div>Your language is currently set to: <span class="bold">{{ $store.getters.languageName }}</span> </div>
         <label>Choose your language:</label>
-        <select v-model="selected" @change="selectedLanguage">
+        <select v-model="selected" @change="selectedLanguage" class="dropdown">
             <option disabled value="">Language</option>
             <option v-for="language in languages.keys()"> {{ language }} </option>
         </select>
@@ -46,5 +46,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    
+    .bold {
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+    form > div {
+        margin: 2vh;
+    }
+    .dropdown {
+        margin: 5px;
+    }
+
 </style>

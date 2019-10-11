@@ -4,7 +4,7 @@
         <div id="profile-details">
             <img id="avatar-image" src="https://avatars.dicebear.com/v2/human/${seed}.svg" alt=""/>
             <h1>Welcome, {{ $store.getters.user.username }}.</h1>
-            <LanguageSelection />
+            <LanguageSelection/>
         </div>
         <RoomsList :rooms="languages.keys()" id="chat-rooms-list"/>
     </div>
@@ -76,5 +76,6 @@ export default {
 
     #chat-rooms-list {
         grid-area: 1 / 2 / 1 / 2;
+        margin-top: 2.5vh;
     }
 </style>
