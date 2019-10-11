@@ -24,7 +24,7 @@ Why should you care about our product?
 	- The app will authenticate users during login.
 
 - OUT 
-	- The app will not retain any messages after a chatroom a left. 
+	- The app will not retain any messages after a chatroom is left. 
 	- Direct Messaging
 
 #### MVP
@@ -44,7 +44,7 @@ A web application with a single chatroom for users to communicate and receive in
 
 ### Non-Functional Requirements
  #### Security
- - To ensure user information and privacy, the app will utilize AWS Cognito to authenticate a user. The app will also not retain any discussions after a user has disconnected from the chatroom. 
+ - To ensure user information and privacy, the app will utilize AWS Cognito to authenticate users. The app will also not retain any chat logs after a user has disconnected from the chatroom. 
  #### Reliability
  - Utilizing AWS cloud services to maintain application's availabilty to users. 
 #### Scalability
@@ -54,10 +54,10 @@ A web application with a single chatroom for users to communicate and receive in
 ![Architecture](https://github.com/SlateAppProject/Slate/blob/dev/docs/arc.jpg)
 
 ### Data Flow
-User visits our web application, and signs up for our translation chatroom product/service (don't worry, it's free!). User registration requirements are: name, alias, password, language preference, email, and phone number. Once registered, user can now login with their credentials. After login is authenticated, a user can choose a chatroom to join, in which a chatroom is languauge specific. Once a user clicks the chatroom and joins, he/she can start typing in their preferential language and it will be translated to the chatrooms defualt language. User can leave chatroom and sign out of web application.
+A user visits our web app, and signs up for our product(don't worry, it's free!). The user registration requirements are: alias, password, email, and phone number. Once registered, a user can now log in with their credentials. After login is authenticated, a user can choose a language specific chatroom to join or simply join the global chat to have messages translated into their language preference. Once a user clicks the chatroom and joins, they can start typing in their preferred language and it will be translated according to the logic of the chat room they are present in. To exit the user simply has to navigate away from the page and they are removed from the chatroom.
 
 ### AWS Assets:
- - API Gateway & WebSockets
+ - API Gateway WebSockets
  - Cognito
  - Lambda
  - Translate
@@ -75,7 +75,6 @@ User visits our web application, and signs up for our translation chatroom produ
    - Vuex
    - Vue Native Websocket
  - HTML/CSS
- - JS
  - Java
  
 ### Important Documents
