@@ -53,7 +53,7 @@ A web application with a single chatroom for users to communicate and receive in
 ### Architecture
 ![Architecture](https://github.com/SlateAppProject/Slate/blob/dev/docs/arc.jpg)
 
-### Data Flow
+### Work Flow
 A user visits our web app, and signs up for our product(don't worry, it's free!). The user registration requirements are: alias, password, email, and phone number. Once registered, a user can now log in with their credentials. After login is authenticated, a user can choose a language specific chatroom to join or simply join the global chat to have messages translated into their language preference. Once a user clicks the chatroom and joins, they can start typing in their preferred language and it will be translated according to the logic of the chat room they are present in. To exit the user simply has to navigate away from the page and they are removed from the chatroom.
 
 ### AWS Assets:
