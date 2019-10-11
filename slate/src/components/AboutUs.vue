@@ -19,7 +19,7 @@
         <img src='../assets/thanos.jpg' class="card-dev-image"  alt="profile-pic"/>
         <div class="card-body">
           <h4 class="card-title">Brandon Hurrington </h4>
-          <p class="card-text">Raconteur. Statesman. Amateur ornithologist.</p>
+          <p class="card-text">Raconteur. Statesman. Polemicist. Ready to risk it all for one more feature.</p>
           <a href="https://github.com/Kai-ros" class="github-link-buttons">
             <img src='../assets/octocat.png' class="github-logo" aria-hidden="true" />@Kai-ros
           </a>
@@ -45,7 +45,7 @@
         <img src='../assets/manish.jpg' class="card-dev-image"  alt="profile-pic"/>
         <div class="card-body">
           <h4 class="card-title">Manish KC</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at semper lorem, ut auctor augue. Donec faucibus eros vehicula facilisis tempus. Nunc eget erat dolor. Sed luctus id elit id dignissim. Maecenas augue ex, ornare eu interdum at, consequat eu orci. </p>
+          <p class="card-text">नमस्ते</p>
           <a href="https://github.com/jManij" class="github-link-buttons">
             <img src='../assets/octocat.png' class="github-logo" aria-hidden="true" />@jManij
           </a>
