@@ -1,14 +1,24 @@
 <template>
   <div>
     <Connection />
-    <h1>{{$store.getters.currentRoom}}</h1>
+    <h1>{{$store.getters.currentRoom ? $store.getters.currentRoom : 'PLEASE RETURN TO HUB'}}</h1>
     <div id="chat-log">
       <div v-for="(message, index) in chatRoomLog" class="chat-messages" v-bind:class="message.userName === $store.getters.user.username ? 'self' : 'other'" :key="index">
-        <h3>{{message.userName}}</h3>
-        <p class="timestamp">{{message.timestamp}}</p>
-        <img class="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt=""/>
-        <p class="original-message">{{message.message}}</p>
-        <p class="translated-message">{{message.translatedMessage}}</p>
+        <div class="mini-flex">
+        <!-- <img class="avatar-image" src="https://outerspace308.files.wordpress.com/2017/11/cropped-space-4-1-cpr.jpg" alt="profile"/> -->
+          <h3 class="username">{{message.userName}}</h3>
+          <p class="timestamp">{{message.timestamp}}</p>
+        </div>
+        <hr/>
+        <div class="mini-flex">
+          <h4 class="explanation">Original ({{message.languageCode}}):</h4>
+          <p class="original-message">{{message.message}}</p>
+        </div>
+        <hr/>
+        <div class="mini-flex">
+          <h4 class="explanation">Translation:</h4>
+          <p class="translated-message">{{message.translatedMessage}}</p>
+        </div>
       </div>
     </div>
     <MessageInput class="center"/>
@@ -48,15 +58,10 @@ export default {
         } else {
           let translationOutputLang = this.$store.getters.languageCode
           if (this.$store.getters.currentRoom !== 'GLOBAL CHAT') {
-            console.log(this.$store.getters.currentRoom)
-            console.log(this.languages.get(this.$store.getters.currentRoom))
+
             let current = this.$store.getters.currentRoom
-            console.log('German' == `${current}`)
             translationOutputLang = this.languages.get(this.$store.getters.currentRoom)
           }
-
-          console.log("message lang " + messageFromSocket.languageCode)
-          console.log('output lang ' + translationOutputLang)
 
           let translation = await this.translateMessage(messageFromSocket.message, messageFromSocket.languageCode, translationOutputLang)
           messageFromSocket.translatedMessage = translation.message
@@ -99,24 +104,60 @@ export default {
   width: 90%;
   margin: auto;
   overflow: auto;
-  background-color: #B7BFC7;
+  background-color: white;
+  border: 2px solid rgba(183,191,199,1);
+  box-shadow: inset 3px 5px 10px -1px rgba(183,191,199,1);
   border-radius: 10px;
-  align-content: stretch;
+  /* align-content: flex-start; */
+}
+
+.mini-flex {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 }
 
 .chat-messages {
-  height: 25vh;
-  width: 25vw;
+  flex-basis: 0;
+  text-align: left;
+  width: 40vw;
   font-size: 2vw;
   background-color: white;
+  border: 2px solid rgba(183,191,199,1);
+  box-shadow: 3px 5px 10px -1px rgba(183,191,199,1);
   margin: 5px 10px;
   border-radius: 10px;
 }
 
+.username {
+  display: inline-block;
+  margin-left: 3%;
+  font-size: calc(10px + 1vw);
+}
+
+.timestamp {
+  display: inline-block;
+  font-size: calc(10px + .5vw);
+  margin-right: 3%;
+}
+
+.original-message {
+  width: 80%;
+  font-size: calc(10px + 1vw);
+}
+
+.translated-message {
+  width: 78%;
+  font-size: calc(10px + 1vw);
+}
+
 .avatar-image {
   height: 5vh;
-  width: 5vw;
+  width: 5vh;
   border-radius: 50%;
+  margin-left: 5%;
+  margin-right: -5%;
 }
 
 .self {
@@ -129,6 +170,39 @@ export default {
 
 .center {
   margin: auto;
+}
+
+.explanation {
+  text-align: left;
+  font-size: calc(10px + .5vw);
+  font-weight: bold;
+  width: 22%;
+  margin-top: 3px;
+  align-self: flex-start;
+  margin-left: 2%;
+}
+
+hr {
+  margin: 5px;
+  border: 1px solid rgba(183,191,199,1);
+}
+
+@media (max-width: 979px) {
+    .chat-messages {
+      width: 80%;
+    }
+    .username {
+      width: 40%;
+    }
+    .explanation {
+      width: 30%;
+    }
+    .original-message {
+      width: 70%;
+    }
+    .translated-message {
+      width: 70%;
+    }
 }
     
 </style>
